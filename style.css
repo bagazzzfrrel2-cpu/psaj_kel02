@@ -1,42 +1,122 @@
-<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Spectral:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    /* Sedikit trik: Override font agar bertema bajak laut tanpa menyentuh file CSS utama */
-    h1, h2, h3, nav { font-family: 'Pirata One', system-ui; }
-    body { font-family: 'Spectral', serif; }
-</style>
+/* RESET DASAR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<nav>
-    <div class="logo">🏴‍☠️ ARMADA HITAM</div>
-    <ul>
-        <li><a href="#home">Dermaga</a></li>
-        <li><a href="#kru">Kru Kapal</a></li>
-        <li><a href="#harta">Harta Karun</a></li>
-    </ul>
-</nav>
+/* BODY */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2933;
+  line-height: 1.6;
+}
 
-<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=1500');">
-    <h1>MENUJU GARIS CAKRAWALA</h1>
-    <p>Mengarungi tujuh samudra mencari kejayaan abadi.</p>
-</section>
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
 
-<div class="container">
-    <h2 id="kru">Kru Bajak Laut</h2>
-    <div class="grid-container">
-        <div class="card">
-            <h3>Si Janggut Merah</h3>
-            <p>Kapten Kapal (Project Leader)</p>
-        </div>
-        <div class="card">
-            <h3>Jack "Si Kilat"</h3>
-            <p>Navigator (Developer)</p>
-        </div>
-    </div>
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
 
-    <h2 id="harta">Laporan Ekspedisi (Makalah)</h2>
-    <div class="makalah-box">
-        <p><strong>Log Kapten - Tanggal 11 Februari 1726:</strong> Kami telah menemukan pulau yang tidak terpetakan. Kode-kode rahasia tertanam di pasir pantai...</p>
-    </div>
-</div>
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
 
-<footer>
-    <p>&copy; 172
+/* NAVBAR */
+nav {
+  background-color: #1e40af;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px 15px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* SECTION */
+section {
+  background-color: white;
+  margin: 25px auto;
+  padding: 25px;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  color: #1e40af;
+  margin-bottom: 10px;
+}
+
+section p {
+  text-align: justify;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #1e40af;
+}
+
+/* VIDEO */
+video {
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 6px 0;
+  }
+
+  section {
+    margin: 15px;
+    padding: 20px;
+  }
