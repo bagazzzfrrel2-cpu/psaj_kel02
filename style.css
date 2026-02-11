@@ -1,3 +1,14 @@
+/* 1. VARIABEL - Memudahkan ganti warna di satu tempat */
+:root {
+  --primary-blue: #1e3a8a;
+  --accent-blue: #2563eb;
+  --bg-light: #f3f4f6;
+  --text-dark: #1f2933;
+  --white: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
 /* RESET DASAR */
 * {
   margin: 0;
@@ -5,30 +16,32 @@
   box-sizing: border-box;
 }
 
-/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f3f4f6;
-  color: #1f2933;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   line-height: 1.6;
+  scroll-behavior: smooth; /* Tambahan agar scroll lebih halus */
 }
 
 /* HEADER */
 header {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+  color: var(--white);
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px; /* Ditambah biar lebih lega */
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem; /* Ukuran diperbesar sedikit */
   margin-bottom: 10px;
+  letter-spacing: -0.5px;
 }
 
 header p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   opacity: 0.9;
+  font-weight: 300;
 }
 
 /* NAVBAR */
@@ -36,34 +49,41 @@ nav {
   background-color: #1e40af;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  position: sticky; /* Navbar tetap di atas saat scroll */
+  top: 0;
+  z-index: 1000;
   padding: 10px;
 }
 
 nav a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
-  margin: 8px 15px;
+  margin: 8px 20px;
   font-weight: 500;
+  transition: 0.3s; /* Efek transisi halus */
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #bfdbfe; /* Warna berubah sedikit saat hover */
 }
 
 /* SECTION */
 section {
-  background-color: white;
-  margin: 25px auto;
-  padding: 25px;
+  background-color: var(--white);
+  margin: 40px auto; /* Jarak antar section ditambah */
+  padding: 30px;
   max-width: 900px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 section h2 {
-  color: #1e40af;
-  margin-bottom: 10px;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--bg-light); /* Garis bawah pemanis */
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 section p {
@@ -74,49 +94,55 @@ section p {
 .btn {
   display: inline-block;
   margin-top: 15px;
-  padding: 12px 22px;
-  background-color: #2563eb;
-  color: white;
+  padding: 12px 25px;
+  background-color: var(--accent-blue);
+  color: var(--white);
   text-decoration: none;
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: 600;
+  transition: transform 0.2s,} {background 0.3s;
 }
 
 .btn:hover {
-  background-color: #1e40af;
+  background-color: var(--primary-blue);
+  transform: translateY(-2px); /* Efek melayang saat hover */
 }
 
 /* VIDEO */
 video {
-  margin-top: 15px;
+  width: 100%; /* Agar video responsif mengikuti lebar section */
+  height: auto;
+  margin-top: 20px;
   border-radius: 10px;
 }
 
 /* FOOTER */
 footer {
-  background-color: #1e3a8a;
-  color: white;
+  background-color: var(--primary-blue);
+  color: var(--white);
   text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+  padding: 25px;
+  margin-top: 50px;
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {}
+/* RESPONSIVE - Perbaikan Kurung Kurawal */
+@media (max-width: 600px) {
   header h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   nav {
     flex-direction: column;
+    padding: 15px;
   }
 
   nav a {
-    margin: 6px 0;
+    margin: 8px 0;
   }
 
   section {
-    margin: 15px;
+    margin: 20px 15px;
     padding: 20px;
   }
+}
